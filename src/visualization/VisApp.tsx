@@ -45,6 +45,9 @@ import Overlay from '../component/common/Overlay';
 import ApiKeyModal from './template/ApiKeyModal';
 import { useApiKeyContext } from './store/apiKeyStore';
 
+/** Strict Mode runs effects twice in dev; prevents stacking duplicate API key overlays. */
+let apiKeyModalAutoOpenDoneForEmptyKey = false;
+
 const Body = styled.div`
   width: 100vw;
   height: 100vh;
@@ -188,7 +191,13 @@ function InnerVisApp() {
   }, [openAiApiKey]);
 
   useEffect(() => {
-    if (openAiApiKey === '') openApiKeyModal();
+    if (openAiApiKey !== '') {
+      apiKeyModalAutoOpenDoneForEmptyKey = false;
+      return;
+    }
+    if (apiKeyModalAutoOpenDoneForEmptyKey) return;
+    apiKeyModalAutoOpenDoneForEmptyKey = true;
+    openApiKeyModal();
   }, [openAiApiKey, openApiKeyModal]);
 
   const triggerPipeline = async (withEval: boolean, modelName: string) => {

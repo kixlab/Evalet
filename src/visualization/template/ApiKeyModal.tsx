@@ -71,7 +71,7 @@ const ApiKeyModal = ({ close, initialApiKey, onSubmit }: Props) => {
       <p className="desc">
         Enter your key here if it is not set in `.env` or if you want to update it.
         <br />
-        The value is stored in your browser local storage.
+        The key is kept in memory only and cleared when you refresh or close the tab.
       </p>
       <Input
         type="password"
@@ -84,7 +84,7 @@ const ApiKeyModal = ({ close, initialApiKey, onSubmit }: Props) => {
           }
         }}
       />
-      <p className="hint">The saved key is only used in this browser.</p>
+      <p className="hint">It is not written to disk or browser storage.</p>
       <div className="buttons">
         <SecondaryButton onClick={close}>Cancel</SecondaryButton>
         <NormalButton onClick={handleSubmit}>Save</NormalButton>
