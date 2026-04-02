@@ -1,3 +1,67 @@
 # Evalet
 
 [CHI 2026] Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions
+
+## Running locally
+
+After cloning the repository or downloading it as a ZIP, follow the steps below.
+
+### Prerequisites
+
+- **Node.js** (LTS recommended) — React frontend
+- **Python 3.9–3.12** — clustering and API backend (dependencies such as `numba` may not support Python 3.13+)
+
+### 1. Environment variables
+
+Create a `.env` file in the project root and set your OpenAI API key (see `.env.example`).
+
+```bash
+cp .env.example .env
+# Edit REACT_APP_OPENAI_API_KEY in .env to your real key
+```
+
+### 2. Frontend (React)
+
+From the project root, install dependencies and start the dev server.
+
+```bash
+npm install
+npm start
+```
+
+The app is served at `http://localhost:3000` by default. If you use Yarn, run `yarn` and `yarn start` instead.
+
+### 3. Backend (Flask)
+
+In a **separate terminal**, a Python virtual environment is recommended.
+
+```bash
+cd pipeline_flask
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python server.py
+```
+
+The API runs at `http://localhost:8080`. The frontend uses `SERVER_BASE_URL` in `src/configs.ts` to reach the backend; for local development, ensure it points to `http://localhost:8080`.
+
+### Summary
+
+| Component        | Command (example)        | URL                     |
+|------------------|--------------------------|-------------------------|
+| React dev server | `npm start`              | `http://localhost:3000` |
+| Flask API        | `python pipeline_flask/server.py` | `http://localhost:8080` |
+
+For clustering and related API features, run **both** React and Flask.
+
+### Production build (optional)
+
+Build the frontend once, then serve it with Flask on a single port.
+
+```bash
+npm run build
+cd pipeline_flask
+python server.py
+```
+
+Open the app at `http://localhost:8080` (Flask serves the `build` output).
