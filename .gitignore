@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+.venv/
+venv/
+pipeline_flask/.venv/
+
+# env & secrets (로컬에만 두고, 예시는 .env.example 로 커밋)
+.env
+.env.local
+.env.*.local
+
+# build & cache
+build/
+*.pyc
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

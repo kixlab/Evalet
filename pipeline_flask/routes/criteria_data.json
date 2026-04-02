@@ -1,0 +1,18 @@
+[
+  {
+    "id": "keyword_integration",
+    "name": "Novel Keyword Integration",
+    "description": "This criterion evaluates not only how seamlessly the given keywords are woven into the narrative but also the originality and ingenuity with which they are combined and utilized. A high-scoring story does more than merely include the keywords—it integrates them in ways that feel essential, dynamic, and transformative to the plot, characters, and themes. The best executions will use the keywords in unexpected or inventive ways, elevating their meaning through symbolism, wordplay, or unique contextual applications. Stories that employ keywords in a predictable, superficial, or mechanically inserted manner will score poorly, whereas those that creatively intertwine them to enhance the narrative’s depth, cohesion, and impact will excel.",
+    "positiveBehaviors": [],
+    "negativeBehaviors": [],
+    "excludeBehaviors": []
+  },
+  {
+    "id": "horror_atmosphere",
+    "name": "Horror Atmosphere",
+    "description": "This criterion evaluates the story’s ability to cultivate an immersive and relentless sense of fear, dread, or psychological unease.\nPOSITIVE ARE GIVEN WHEN:\n- The narrative presents as mundane or neutral until the revelation\n- Understanding, not description, creates the horror\n- A specific \"aha moment\" recontextualizes everything that came before\n- Prior events take on disturbing new meaning when re-examined\nNEGATIVE SHOULD BE GIVEN WHEN:\n- Relies on traditional horror atmosphere, clichés (darkness, isolation, etc.)\n- Scary elements are explicitly described rather than implied\n- The story uses conventional horror clichés (supernatural entities, jumpscares)\n- Multiple interpretations could include benign or comforting readings\n- There is no singular moment that transforms understanding",
+    "positiveBehaviors": [],
+    "negativeBehaviors": [],
+    "excludeBehaviors": []
+  }
+]

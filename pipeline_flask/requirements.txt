@@ -1,0 +1,10 @@
+# Use Python 3.9–3.12. (numba 0.60 does not support Python 3.13+.)
+flask==2.2.5
+flask-cors
+pyyaml
+numpy
+hdbscan
+scikit-learn
+pacmap
+numba==0.60.0
+llvmlite==0.43.0
