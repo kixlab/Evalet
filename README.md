@@ -1,6 +1,23 @@
-# Evalet
+<p align="center">
+  <img src="images/Evalet_teaser.png" alt="Teaser" />
+</p>
 
-[CHI 2026] Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions
+<h1 align="center">🔬Evalet</h1>
+
+<p align="center">
+  <strong>[CHI 2026]</strong> Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions<br /><br />
+  <em>CHI 2026 Honorable Mention Award🏆</em><br /><br />
+  <a href="https://arxiv.org/abs/2509.11206"><img src="https://img.shields.io/badge/arXiv-2509.11206-b31b1b.svg" alt="arXiv" /></a>
+  <a href="https://evalet.kixlab.org"><img src="https://img.shields.io/badge/Website-evalet.kixlab.org-4285F4.svg" alt="Website" /></a>
+</p>
+
+Evalet helps practitioners understand and validate LLM-based evaluations by decomposing outputs into fragment-level functions. Instead of opaque scores, see exactly what in each output influenced the evaluation and why.
+
+### System overview
+
+<p align="center">
+  <img src="images/Evalet_system_overview.png" alt="System overview" />
+</p>
 
 ## Running locally
 
@@ -47,21 +64,9 @@ The API runs at `http://localhost:8080`. The frontend uses `SERVER_BASE_URL` in 
 
 ### Summary
 
-| Component        | Command (example)        | URL                     |
-|------------------|--------------------------|-------------------------|
-| React dev server | `npm start`              | `http://localhost:3000` |
+| Component        | Command (example)                 | URL                     |
+| ---------------- | --------------------------------- | ----------------------- |
+| React dev server | `npm start`                       | `http://localhost:3000` |
 | Flask API        | `python pipeline_flask/server.py` | `http://localhost:8080` |
 
 For clustering and related API features, run **both** React and Flask.
-
-### Production build (optional)
-
-Build the frontend once, then serve it with Flask on a single port.
-
-```bash
-npm run build
-cd pipeline_flask
-python server.py
-```
-
-Open the app at `http://localhost:8080` (Flask serves the `build` output).
